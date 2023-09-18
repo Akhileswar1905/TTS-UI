@@ -36,12 +36,9 @@ recognition.onerror = (event) => {
 };
 
 async function fetchVoice() {
-  const res = await axios.post(
-    "https://text-translator-api.onrender.com/speak",
-    {
-      text: transcript,
-      lang: "en-in",
-    }
-  );
+  const res = await axios.post("http://127.0.0.1:8000/speak", {
+    text: transcript,
+    lang: "en-in",
+  });
   console.log(res.data);
 }
